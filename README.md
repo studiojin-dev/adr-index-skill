@@ -146,6 +146,16 @@ Agents can use this file to locate relevant ADRs without reading all documents.
 - The ADR index MUST be generated using the `adr-index` skill.
 - AGENTS.md MUST NOT accumulate completed work logs.
   Decisions MUST be recorded in ADRs; only links or short summaries are allowed here.
+
+### ADR Detection Rule
+
+If you make or rely on a decision that:
+- introduces architectural constraints,
+- involves trade-offs,
+- or is not obvious from code alone,
+
+you MUST pause and explicitly state:
+"An ADR is required for this decision."
 ```
 
 ## When to Write an ADR

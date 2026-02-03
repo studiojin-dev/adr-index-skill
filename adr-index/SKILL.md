@@ -52,4 +52,14 @@ The following terms are to be interpreted as described in RFC 2119:
 4. AGENTS.md MUST NOT accumulate completed work logs.
    Architectural decisions MUST be recorded in ADRs.
    AGENTS.md MAY contain only links to ADRs or brief summaries.
+
+### ADR Detection Rule
+
+If you make or rely on a decision that:
+- introduces architectural constraints,
+- involves trade-offs,
+- or is not obvious from code alone,
+
+you MUST pause and explicitly state:
+"An ADR is required for this decision."
 ```
