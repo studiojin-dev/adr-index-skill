@@ -1,5 +1,6 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Release](https://img.shields.io/github/v/release/studiojin-dev/adr-index-skill)
+[![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 
 # adr-index 스킬
 
@@ -167,6 +168,7 @@ you MUST pause and explicitly state:
 - “왜 이렇게 선택했나?”라는 질문이 다시 나올 가능성이 높다.
 
 다음은 ADR을 작성하지 **말아야** 합니다:
+
 - 단순한 버그 수정
 - 동작이나 아키텍처 변화 없는 순수 리팩터링
 - 아직 결론이 나지 않은 실험 작업
@@ -196,6 +198,7 @@ RFC 7807을 사용해 모든 API 오류 응답을 표준화하기로 결정합�
 - 나중에 되돌리기 비용이 크다.
 
 ✅ 조치:
+
 - 결정 내용을 설명하는 ADR을 새로 작성한다.
 - `$adr-index` 또는 `/adr-index`를 실행한다.
 - 필요하다면 AGENTS.md에 남은 완료 항목을 제거하고 링크만 남긴다.
@@ -210,6 +213,7 @@ RFC 7807을 사용해 모든 API 오류 응답을 표준화하기로 결정합�
 - 시스템 설계는 그대로다.
 
 ❌ 조치:
+
 - ADR을 작성하지 않는다.
 - `adr-index`를 실행하지 않는다.
 
@@ -224,6 +228,7 @@ JSONB 지원과 인덱싱 요구 때문에 MySQL 대신 PostgreSQL을 선택한�
 - 다른 컴포넌트가 이 선택에 의존한다.
 
 ✅ 조치:
+
 - 맥락, 결정, 결과를 담은 ADR을 작성한다.
 - 커밋 전에 `adr-index`를 실행한다.
 - AGENTS.md에 결정 상세가 남지 않도록 한다.
@@ -237,6 +242,7 @@ JSONB 지원과 인덱싱 요구 때문에 MySQL 대신 PostgreSQL을 선택한�
 - 작업이 새로운 아키텍처 규칙이나 제약을 도입했다.
 
 ✅ 조치:
+
 - 완료 항목을 ADR로 전환한다.
 - `adr-index`를 실행한다.
 - AGENTS.md에서 완료 항목을 제거한다.

@@ -1,5 +1,6 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Release](https://img.shields.io/github/v/release/studiojin-dev/adr-index-skill)
+[![한국어](https://img.shields.io/badge/Language-한국어-blue.svg)](README.ko.md)
 
 # adr-index Skill
 
@@ -170,6 +171,7 @@ Write an ADR if **any** of the following is true:
 - An agent is likely to ask the same “why was this chosen?” question again.
 
 Do **not** write an ADR for:
+
 - Simple bug fixes
 - Pure refactoring with no behavioral or architectural change
 - Experimental work where no decision has been finalized
@@ -199,6 +201,7 @@ You decide to standardize all API error responses using RFC 7807.
 - Reverting later would be costly.
 
 ✅ Action:
+
 - Write a new ADR describing the decision.
 - Run `$adr-index` or `/adr-index`.
 - Remove any related completion notes from AGENTS.md, leaving only a link if needed.
@@ -214,6 +217,7 @@ external behavior or constraints.
 - The system design remains unchanged.
 
 ❌ Action:
+
 - Do NOT write an ADR.
 - Do NOT run `adr-index`.
 
@@ -228,6 +232,7 @@ You choose PostgreSQL over MySQL due to JSONB support and indexing needs.
 - Other components will depend on this choice.
 
 ✅ Action:
+
 - Write an ADR capturing the context, decision, and consequences.
 - Run `adr-index` before committing.
 - Ensure AGENTS.md does not retain the decision details.
@@ -241,6 +246,7 @@ An agent finishes implementing a feature and marks it as complete in AGENTS.md.
 - The work introduced a new architectural rule or constraint.
 
 ✅ Action:
+
 - Convert the completed item into an ADR.
 - Run `adr-index`.
 - Remove the completed item from AGENTS.md.
