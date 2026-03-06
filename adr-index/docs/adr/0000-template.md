@@ -11,6 +11,8 @@ ADR ID format:
 - 0000     : per-day sequence (zero-padded)
 - XXX      : random alphanumeric suffix
 Example: ADR-20260203-0007-A9F
+- If Date is present, it must match the YYYYMMDD value in the header.
+- ADR IDs must be unique across docs/adr/*.md.
 -->
 
 ## Context

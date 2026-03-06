@@ -98,6 +98,8 @@ TL;DR: One short sentence summarizing the decision.
 
 헤더만 필수이며, 메타데이터 줄은 선택 사항이지만
 인덱싱과 검색 품질을 높이기 위해 강력히 권장합니다.
+`Date:`를 적는 경우 헤더의 `YYYYMMDD` 날짜와 일치해야 합니다.
+ADR ID는 `docs/adr/*.md` 전체에서 유일해야 합니다.
 
 ---
 
@@ -115,6 +117,11 @@ $adr-index        # Codex CLI
 1. ADR 파일(상단 섹션만) 스캔
 2. `docs/adr/index.json` 생성 또는 업데이트
 3. 최소 요약(ADR 개수와 출력 경로) 출력
+
+중복 ADR ID가 발견되면 생성기는 `index.json`을 쓰지 않습니다.
+대신 나중에 나온 중복 ADR마다 대안 ID 후보를 출력하므로,
+AI 에이전트가 하나를 골라 헤더를 수정하고 필요하면 파일명도 바꾼 뒤
+스킬을 다시 실행할 수 있습니다.
 
 생성된 인덱스에는 가벼운 메타데이터만 포함됩니다:
 

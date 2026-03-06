@@ -13,15 +13,24 @@ description: Generate and validate the ADR index for this repo (docs/adr/*.md ->
 python .codex/skills/adr-index/scripts/build_adr_index.py
 ```
 
-2) Review the short summary output (ADR count + whether index.json changed).
+2) If duplicate ADR IDs are reported:
+- Keep the first ADR for that ID unchanged.
+- For each later `change:` path, choose the first suggested replacement ID by default.
+- Only choose a later suggestion if repo-specific naming or ordering conventions make it a better fit.
+- Update the ADR header to the chosen ID.
+- If the filename embeds the old ADR ID, rename the file to match.
+- Re-run the generator until it succeeds.
+
+3) Review the short summary output (ADR count + whether index.json changed).
 
 ## ADR Rules (enforced by script)
 
 - First line must be `# ADR-YYYYMMDD-####-XXX: <title>` (date, 4 digits, 3 random chars, non-empty title).
+- ADR IDs must be unique across `docs/adr/*.md`.
 - Optional metadata lines within the first ~40 lines:
   - `Tags: a, b, c`
   - `Status: Proposed | Accepted | Deprecated`
-  - `Date: YYYY-MM-DD`
+  - `Date: YYYY-MM-DD` (optional, but if present it must match the header date)
   - `TL;DR: one short sentence`
 
 ## Output
@@ -29,6 +38,7 @@ python .codex/skills/adr-index/scripts/build_adr_index.py
 - Writes `docs/adr/index.json` with fields: id, title, tags[], status, date, tldr, path.
 - Sorts by date desc, then id desc.
 - Prints only a short summary line.
+- On duplicate ADR IDs, prints replacement ID candidates for each later duplicate so the AI can pick one and continue cleanly.
 
 ## Guardrails
 

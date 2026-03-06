@@ -101,6 +101,8 @@ TL;DR: One short sentence summarizing the decision.
 
 Only the header is required. Metadata lines are optional but strongly recommended
 to improve indexing and search quality.
+If `Date:` is present, it must match the `YYYYMMDD` date in the header.
+ADR IDs must be unique across `docs/adr/*.md`.
 
 ---
 
@@ -118,6 +120,11 @@ The skill will:
 1. Scan ADR files (top section only)
 2. Generate or update `docs/adr/index.json`
 3. Print a minimal summary (ADR count and output path)
+
+If duplicate ADR IDs are found, the generator does not write `index.json`.
+Instead, it prints suggested replacement IDs for each later duplicate ADR so
+an AI agent can choose one, update the ADR header, optionally rename the file,
+and rerun the skill.
 
 The generated index contains only lightweight metadata:
 

@@ -53,6 +53,7 @@ This format ensures:
 - chronological sorting
 - safe parallel work
 - scalability for large projects
+- globally unique ADR IDs across `docs/adr/*.md`
 
 ---
 
@@ -67,7 +68,10 @@ Tags: comma-separated keywords
 Status: Proposed | Accepted | Deprecated
 Date: YYYY-MM-DD
 TL;DR: One short sentence summarizing the decision.
+```
 
+If `Date:` is present, it MUST match the `YYYYMMDD` date in the ADR header.
+ADR IDs MUST be unique across `docs/adr/*.md`.
 
 # Architecture Decision Records (ADR)
 
@@ -140,6 +144,8 @@ TL;DR: One short sentence summarizing the decision.
 
 Only the first header line is strictly required.
 Metadata lines are optional but strongly recommended.
+If `Date:` is present, it MUST match the `YYYYMMDD` date in the ADR header.
+ADR IDs MUST be unique across `docs/adr/*.md`.
 
 ---
 
@@ -180,6 +186,10 @@ After adding or modifying any ADR, you MUST run:
 - /adr-index   (Claude Code, Gemini CLI)
 
 This updates docs/adr/index.json, which agents use for fast, low-cost lookup.
+If duplicate ADR IDs are detected, the tool will print suggested replacement
+IDs for each later duplicate ADR instead of writing the index. Choose one of
+the suggested IDs, update the ADR header, optionally rename the file, and run
+the tool again.
 
 ---
 
